@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Produits
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let product of products" (click)="selectedProduct = product"
+      class="list-group-item">{{product.label}}
+    </li>
+  </ul>
+</div>
+<app-product-detail [selectedProduct]="selectedProduct"></app-product-detail>
