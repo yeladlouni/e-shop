@@ -1,12 +1,14 @@
-<app-category-filter (category)="selectCategory($event)"></app-category-filter>
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Produits
+<div *ngIf="isAuthenticated()">
+    <app-category-filter (category)="selectCategory($event)"></app-category-filter>
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Produits
+      </div>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let product of products$ | async" (click)="selectedProduct = product"
+          class="list-group-item">{{product.label}}
+        </li>
+      </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li *ngFor="let product of products$ | async" (click)="selectedProduct = product"
-      class="list-group-item">{{product.label}}
-    </li>
-  </ul>
+  <app-product-detail [selectedProduct]="selectedProduct"></app-product-detail>
 </div>
-<app-product-detail [selectedProduct]="selectedProduct"></app-product-detail>

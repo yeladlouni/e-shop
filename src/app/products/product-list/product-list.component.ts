@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductsService } from '../products.service';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,8 +15,14 @@ export class ProductListComponent implements OnInit {
   products$: Observable<Product[]>;
   products: Product[] = [];
 
-  constructor(productsService: ProductsService) {
+  constructor(productsService: ProductsService, private authService: AuthService) {
+    authService.login().subscribe();
     this.products$ = productsService.getProducts();
+
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.token !== '';
   }
 
   ngOnInit(): void {

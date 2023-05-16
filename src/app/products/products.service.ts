@@ -29,6 +29,7 @@ export class ProductsService {
     const products$ = this.http
       .get<ProductDTO[]>(environment.apiUrl)
       .pipe(
+
         map(products => products.map(product => {
           return {
             id: product.id,
@@ -40,7 +41,15 @@ export class ProductsService {
             production_date: new Date(),
             expiration_date: new Date()
           }
-        }))
+        })),
+        filter(products => {
+          products.filter(product => {
+            if (product.category.startsWith('men'))
+              return true;
+            return false;
+          })
+          return true;
+        })
       );
 
     return products$;

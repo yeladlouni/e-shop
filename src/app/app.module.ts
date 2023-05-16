@@ -9,6 +9,7 @@ import { ProductsModule } from './products/products.module';
 import { CartComponent } from './cart/cart.component';
 import { KeyLoggerComponent } from './key-logger/key-logger.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     CoreModule,
     ProductsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
