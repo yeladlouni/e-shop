@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "e-store-e980a.appspot.com",
     messagingSenderId: "729510842370",
     appId: "1:729510842370:web:a8c36535263590be22571b"
-  }
+  },
+  apiUrl: 'https://fakestoreapi.com/products'
 };
 
 /*

@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
 import { CartComponent } from './cart/cart.component';
 import { KeyLoggerComponent } from './key-logger/key-logger.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { KeyLoggerComponent } from './key-logger/key-logger.component';
     AppRoutingModule,
     SharedModule,
     CoreModule,
-    ProductsModule
+    ProductsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
