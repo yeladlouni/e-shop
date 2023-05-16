@@ -23,4 +23,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectCategory() {
+    window.alert('category selected');
+  }
+
 }

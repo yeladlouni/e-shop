@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "e-shop-374a4": {
+      "hosting": {
+        "e-shop": [
+          "e-shop-374a4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "e-shop-374a4"
+  }
+}
