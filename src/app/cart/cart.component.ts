@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products/products.service';
 import { Product } from '../products/product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +9,7 @@ import { Product } from '../products/product';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  products: Product[] = [];
+  products: Observable<Product[]>;
 
   constructor(productsService: ProductsService) {
     this.products = productsService.getProducts();

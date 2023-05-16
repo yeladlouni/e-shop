@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
+import { CartComponent } from './cart/cart.component';
+import { KeyLoggerComponent } from './key-logger/key-logger.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent,
+    KeyLoggerComponent
   ],
   imports: [
     BrowserModule,

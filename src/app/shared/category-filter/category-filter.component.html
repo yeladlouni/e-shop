@@ -3,6 +3,6 @@
     Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a *ngFor="let category of categories" class="dropdown-item" href="#">{{category}}</a>
+    <a (click)="OnSelectCategory(category)" *ngFor="let category of categories" class="dropdown-item" href="#">{{category}}</a>
   </div>
 </div>

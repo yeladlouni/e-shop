@@ -4,7 +4,7 @@
     Produits
   </div>
   <ul class="list-group list-group-flush">
-    <li *ngFor="let product of products"
+    <li *ngFor="let product of products | async"
       class="list-group-item">{{product.label}}
     </li>
   </ul>

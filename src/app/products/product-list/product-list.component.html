@@ -1,10 +1,10 @@
-<app-category-filter (category)="selectCategory()"></app-category-filter>
+<app-category-filter (category)="selectCategory($event)"></app-category-filter>
 <div class="card" style="width: 18rem;">
   <div class="card-header">
     Produits
   </div>
   <ul class="list-group list-group-flush">
-    <li *ngFor="let product of products" (click)="selectedProduct = product"
+    <li *ngFor="let product of products$ | async | productFilter:'Home'" (click)="selectedProduct = product"
       class="list-group-item">{{product.label}}
     </li>
   </ul>

@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./category-filter.component.scss']
 })
 export class CategoryFilterComponent implements OnInit {
-  categories = ['TV', 'Home', 'Bureau'];
+  categories = ['IT', 'Home', 'Bureau'];
 
   @Output() category = new EventEmitter();
 
@@ -15,8 +15,8 @@ export class CategoryFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  OnSelectCategory() {
-    this.category.emit();
+  OnSelectCategory(selectedCategory: string) {
+    this.category.emit(selectedCategory);
   }
 
 }
